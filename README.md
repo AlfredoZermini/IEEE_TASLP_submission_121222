@@ -1,6 +1,6 @@
 ### USAGE
 
-# Generate data:
+# Generate data
 Requires TIMIT dataset and Surrey RIRs dataset (not provided here).
 
 (set config.yaml for 'train', 'val' and 'test')
