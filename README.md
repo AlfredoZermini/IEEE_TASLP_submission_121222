@@ -1,9 +1,9 @@
 ### USAGE
 
-Generate data:
+# Generate data:
 
    python prepare_input_data.py
 
-Train models
+# Train models
 
    python main.py
