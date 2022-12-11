@@ -1,0 +1,48 @@
+arguments:
+  challenge_name: 'B_format' #B_format
+  case_name: 'B_format'
+  task: 'val' #train #test #val    ### set n_utt accordingly
+  Train_Room: '12BB01'
+  theta_feature: True
+  LPS_feature: True
+  post_suffix: ''
+  DNN_suffix: ''
+  task_challenge: ''
+
+network:
+  DNN_type: 'MLP' # CNN MLP
+  n_hid: 256/2 #256/2
+
+neighbour:
+  frame_neigh: 1
+
+training:
+  n_sources: 3
+  n_epochs: 500 #60 170
+  batch_size: 6 #6 DNN and CNN, 2 RNN, 2 big CNN and DNN
+
+validation:
+  val_samples_check: 5
+  validation_batch_size: 6
+
+audio:
+  fs: 16000  
+  Wlength: 2048 #2048
+  window: 'hann'
+  hop_size: 513 #512
+  overlap: 0.75
+  threshold: 35000
+  n_time: 35021
+
+DOA:
+  min_frames: 70 #80 for DNN
+  n_features: 3
+  n_channels: 2
+  n_freq: 1025
+  n_doas_mix: 9
+  n_utt: 1 #2500 train, #20 test, 20 val, #1 debug
+  n_doas: 36
+  n_channels: 3
+
+matlab:
+  generate_mat_files: false
