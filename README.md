@@ -10,3 +10,7 @@ Requires TIMIT dataset and Surrey RIRs dataset (not provided here).
 # Train models
 
       python main.py
+
+#  Models
+
+https://zenodo.org/record/7427355#.Y5eLyS1Q1QJ
