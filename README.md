@@ -11,6 +11,6 @@ Requires TIMIT dataset and Surrey RIRs dataset (not provided here).
 
       python main.py
 
-#  Models
+#  Pre-trained models
 
 https://zenodo.org/record/7427355#.Y5eLyS1Q1QJ
