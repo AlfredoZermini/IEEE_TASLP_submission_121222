@@ -14,7 +14,8 @@ Requires TIMIT dataset and Surrey RIRs dataset (not provided here).
 
 # Evaluate model
 
-The folder `test_scripts` contains the code which was used to evaluate the networks outputs. These scripts are slightly older (and require some adaptation) than those in the main folder.      
+The folder `test_scripts` contains the code which was used to evaluate the networks outputs. These scripts are slightly older than those in the main folder, they will require some adaptation.
+
 To run the evaluation, do as follows:
 
       cd test_scripts
@@ -29,9 +30,6 @@ To test the model, generate the separated audio, and evaluate the SNR-based metr
 The syntaxt was adapted to the pre-trained files thus, in case you wish to run your own trained models, you will need to modify it accordingly.
 
 
-
-
-      
 
 
 #  Pre-trained models
