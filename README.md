@@ -16,7 +16,7 @@ To train the models, select either 'MLP' or 'CNN' in the `config.yaml`, then run
       python main.py
       
 
-# Evaluate model
+# Evaluate models
 
 The folder `test_scripts` contains the code which was used to evaluate the networks outputs. These scripts are slightly older than those in the main folder, they will require some adaptation.
 
@@ -27,12 +27,24 @@ To run the evaluation, do as follows:
 You need to modify the `project_path` (here set to `/vol/vssp/mightywings`) where required in the scripts, and the `matlab_path` as well, if present at all.
 You will also need to download the pre-trained models (link below) in the `project_path/B_format/RESULTS/models/Results` path.
 
-To test the model, generate the separated audio, and evaluate the SNR-based metrics and PESQ, execute:
+To test the model, generate the separated audio, and evaluate the SNR-based metrics and PESQ, execute
 
       python run_test.py B_format train 12BB01 12BB01 ['theta','MV'] '' 'newnorm'
       
-The syntaxt was adapted to the pre-trained files thus, in case you wish to run your own trained models, you will need to modify it accordingly.
+for each model. The syntaxt was adapted to the pre-trained files thus, in case you wish to run your own trained models, you will need to modify it accordingly.
 
+To plot the results for four metrics, run
+
+      python plot_metrics_allnet.py B_format train 12BB01 12BB01 ['theta','MV'] '' 'newnorm'
+      
+
+To generate the results for the word accuracy, run
+
+      python evaluate_sr.py B_format train 12BB01 12BB01 ['theta','MV'] '' 'newnorm'
+      
+and
+      
+      python plot_srnet.py B_format train 12BB01 12BB01 ['theta','MV'] '' 'newnorm'
 
 
 
