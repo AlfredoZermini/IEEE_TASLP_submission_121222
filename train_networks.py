@@ -46,20 +46,20 @@ def train(args, config):
    args.n_frames = args.frame_neigh*2+1 
 
    # get files list  
-   args.train_files_list = [i for i in os.listdir(args.load_train_data_path) if not i == 'stats.h5']#[:12] #os.listdir(args.load_train_data_path)[:30]
-   args.val_files_list = os.listdir(args.load_val_data_path)#[:300]
+   args.train_files_list = [i for i in os.listdir(args.load_train_data_path) if not i == 'stats.h5']#[:12]#os.listdir(args.load_train_data_path)[:30]
+   args.val_files_list = [i for i in os.listdir(args.load_val_data_path) if not i == 'audio']#[:300]
 
    # define input parameters
    [args.n_train_samples, args.n_freq, args.n_features] = [len(args.train_files_list),1025, 3]
    input_img = Input(shape=(args.n_freq, args.n_frames, args.n_features ) )
    
    # switch between models
-   if args.DNN_type == 'MLP': # Total params: 38,853,633
+   if args.DNN_type == 'MLP': 
       args.model = MLP_model(args, input_img)
       args.model.summary()
       
    
-   elif args.DNN_type == 'CNN': # Total params: 85,284,737
+   elif args.DNN_type == 'CNN':
       args.model = CNN_model(args, input_img)
       args.model.summary()
    

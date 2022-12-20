@@ -1,4 +1,5 @@
 import os
+import numpy as np
 from scipy import signal
 import soundfile
 import matplotlib.pyplot as plt
@@ -10,28 +11,28 @@ from tensorflow.python.keras.backend import set_session
 # predict masks
 def predict_mask(args, file_path, i):
 
-    with args.graph.as_default():
-        set_session(args.sess)
+    #with args.graph.as_default():
+    set_session(args.sess)
 
-        X, Y_gt = generator.create_batch(args, args.load_val_data_path, [file_path], args.frame_neigh)
-        
-        # get central frame
-        Y_gt = Y_gt[:,:,args.frame_neigh,:]
-        X_fr = X[:,:,args.frame_neigh,:]
+    X, Y_gt = generator.create_batch(args, args.load_val_data_path, [file_path], args.frame_neigh)
+    
+    # get central frame
+    Y_gt = Y_gt[:,:,args.frame_neigh,:]
+    X_fr = X[:,:,args.frame_neigh,:]
 
-        # plot(args, os.getcwd(), X_fr[:,:,0].T, 0, mag=False)
-        # plot(args, os.getcwd(), X_fr[:,:,1].T, 1, mag=False)
-        # plot(args, os.getcwd(), Y_gt[:,:,0].T, 2, mag=False)
+    # plot(args, os.getcwd(), X_fr[:,:,0].T, 0, mag=False)
+    # plot(args, os.getcwd(), X_fr[:,:,1].T, 1, mag=False)
+    # plot(args, os.getcwd(), Y_gt[:,:,0].T, 2, mag=False)
 
-        # estimate mask        
-        Y_pred = args.model.predict(X)
+    # estimate mask        
+    Y_pred = args.model.predict(X)
 
-        # if prediction is list of masks, get the first one only for visualization purposes
-        if type(Y_pred) == list:
-            Y_pred = Y_pred[0]
+    # if prediction is list of masks, get the first one only for visualization purposes
+    if type(Y_pred) == list:
+        Y_pred = Y_pred[0]
 
-        # plot
-        plot_masks(args, args.fig_challenge_masks_path, file_path, Y_gt, Y_pred, i)
+    # plot
+    plot_masks(args, args.fig_challenge_masks_path, file_path, Y_gt, Y_pred, i)
 
     return Y_pred, Y_gt[:,:,0]
 
@@ -40,18 +41,19 @@ def predict_mask(args, file_path, i):
 def separate_speech(args, h5_folder, fig_folder, file_name, mask, i, channel=0):
 
     #print(mask.shape)
-    file_name = file_name.replace('.h5', '_A.wav')
+    file_name = file_name.replace('.h5', '.wav')
 
     # read audio
+    print(os.path.join(h5_folder, file_name))
     x, sr =  soundfile.read(os.path.join(h5_folder, file_name) )
+    
     x_ch = x[:,channel]
 
     # stft
     [_, _, X] = signal.stft(x_ch, args.fs, args.window, args.Wlength, args.overlap, args.fft_size)
 
     # apply mask
-    X_separated = np.multiply(X, mask.T)
-    #print(X_separated.shape, X.shape, mask.shape, (mask.T).shape)
+    X_separated = np.multiply(X[:,:mask.shape[0]], mask.T)
 
     # plots
     plot(args, fig_folder, X_separated, i, mag=True)

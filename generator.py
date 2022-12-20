@@ -34,6 +34,8 @@ def create_batch(args, load_path, files_list, frame_neigh):
    Y = []
    # loop over files in batch
    for file_path in paths_list:
+
+      print(file_path)
       
       x, y = load_data(file_path)
 
@@ -139,13 +141,13 @@ def generator(args, load_path, files_list, batch_size, dataset):
          
          ### print spectrograms and save audio
          for i in range(args.val_samples_check):
+            #print(files_list[i])
             
             # mixtures
             X_mix = write_audio(args, args.data_val_path, args.audio_challenge_mixtures_path, files_list[i], i, get_stft=True)
             plot(args, args.fig_challenge_mixtures_path, X_mix, i)
 
             # clean
-            print(args.data_val_path)
             X_clean = write_audio(args, args.data_val_path, args.audio_challenge_clean_path, files_list[i], i, get_stft=True)
             plot(args, args.fig_challenge_clean_path, X_clean, i)
 
