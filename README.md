@@ -1,4 +1,4 @@
-### USAGE
+These scripts were utilized to generate the results in the recent TASLP submission.
 
 # Generate data
 Requires TIMIT dataset and Surrey RIRs dataset (not provided here).
@@ -16,6 +16,7 @@ Requires TIMIT dataset and Surrey RIRs dataset (not provided here).
 
 The folder `test_scripts` contains the code which was used to evaluate the networks outputs. These scripts are slightly older (and require some adaptation) than those in the main folder.      
 To run the evaluation, do as follows:
+
       cd test_scripts
 
 
