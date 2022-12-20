@@ -18,7 +18,20 @@ The folder `test_scripts` contains the code which was used to evaluate the netwo
 To run the evaluation, do as follows:
 
       cd test_scripts
+      
+You need to modify the `project_path` (here set to `/vol/vssp/mightywings`) where required in the scripts, and the `matlab_path` as well, if present at all.
+You will also need to download the pre-trained models (link below) in the `project_path/B_format/RESULTS/models/Results` path.
 
+To test the model, generate the separated audio, and evaluate the SNR-based metrics and PESQ, execute:
+
+      python run_test.py B_format train 12BB01 12BB01 ['theta','MV'] '' 'newnorm'
+      
+The syntaxt was adapted to the pre-trained files thus, in case you wish to run your own trained models, you will need to modify it accordingly.
+
+
+
+
+      
 
 
 #  Pre-trained models
