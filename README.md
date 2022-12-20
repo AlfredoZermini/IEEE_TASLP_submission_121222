@@ -10,6 +10,15 @@ Requires TIMIT dataset and Surrey RIRs dataset (not provided here).
 # Train models
 
       python main.py
+      
+
+# Evaluate model
+
+The folder `test_scripts` contains the code which was used to evaluate the networks outputs. These scripts are slightly older (and require some adaptation) than those in the main folder.      
+To run the evaluation, do as follows:
+      cd test_scripts
+
+
 
 #  Pre-trained models
 
