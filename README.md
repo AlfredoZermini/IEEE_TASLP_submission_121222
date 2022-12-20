@@ -33,12 +33,12 @@ To test the model, generate the separated audio, and evaluate the SNR-based metr
       
 for each model. The syntaxt was adapted to the pre-trained files thus, in case you wish to run your own trained models, you will need to modify it accordingly.
 
-To plot the results for four metrics, run
+To plot the results for the four metrics, run
 
       python plot_metrics_allnet.py B_format train 12BB01 12BB01 ['theta','MV'] '' 'newnorm'
       
 
-To generate the results for the word accuracy, run
+To generate the results for the speech recognition accuracy, run
 
       python evaluate_sr.py B_format train 12BB01 12BB01 ['theta','MV'] '' 'newnorm'
       
