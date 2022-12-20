@@ -1,13 +1,17 @@
 These scripts were utilized to generate the results in the recent TASLP submission.
 
 # Generate data
-Requires TIMIT dataset and Surrey RIRs dataset (not provided here).
+To run the scripts, first set the variable in the `paths.env` file.
 
-(set config.yaml for 'train', 'val' and 'test')
+The data generation requires the TIMIT dataset and Surrey RIRs dataset (not provided here).
+
+Also, set `config.yaml` for generating the 'train', 'val' and 'test' data. The run the following for each case:
 
       python prepare_input_data.py
 
 # Train models
+
+To train the models, select either `MLP` or `CNN` in the `config.yaml`, the run
 
       python main.py
       
