@@ -42,7 +42,7 @@ To generate the results for the speech recognition accuracy, run
 
       python evaluate_sr.py B_format train 12BB01 12BB01 ['theta','MV'] '' 'newnorm'
       
-and
+and for the plots, run
       
       python plot_srnet.py B_format train 12BB01 12BB01 ['theta','MV'] '' 'newnorm'
 
