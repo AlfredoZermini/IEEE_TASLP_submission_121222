@@ -25,6 +25,7 @@ To run the evaluation, do as follows:
       cd test_scripts
       
 You need to modify the `project_path` (here set to `/vol/vssp/mightywings`) where required in the scripts, and the `matlab_path` as well in `run_test.py`.
+
 You will also need to download the pre-trained models (link below) in the `project_path/B_format/RESULTS/models/Results` path.
 
 To test the model, generate the separated audio, and evaluate the SNR-based metrics and PESQ, execute
