@@ -3,7 +3,7 @@ These scripts were utilized to generate the results in the recent TASLP submissi
 # Generate data
 To run the scripts, first set the variable in the `paths.env` file.
 
-The data generation requires the TIMIT dataset and Surrey RIRs dataset (not provided here).
+The data generation requires the TIMIT dataset and Surrey RIRs dataset (link at the bottom of the page).
 
 Also, set `config.yaml` for generating the 'train', 'val' and 'test' data. The run the following for each case:
 
@@ -53,6 +53,6 @@ and for the plots, run
 
 https://zenodo.org/record/7427355#.Y5eLyS1Q1QJ
 
-# Room Impulse Responses
+# Surrey RIRs dataset for B-format recordings
 
 https://zenodo.org/record/7558529#.Y80x_S1Q1QI
