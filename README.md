@@ -52,3 +52,7 @@ and for the plots, run
 #  Pre-trained models
 
 https://zenodo.org/record/7427355#.Y5eLyS1Q1QJ
+
+# Room Impulse Responses
+
+https://zenodo.org/record/7558529#.Y80x_S1Q1QI
